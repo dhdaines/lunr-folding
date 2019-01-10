@@ -12,3 +12,8 @@ searching for for "façade" will return results for "facade."
 Just drop in the `lunr.unicodeNormalizer.js` script after `lunr.js` has been
 loaded. `lunr.tokenizer` will then be monkeypatched to use
 `lunr.unicodeNormalizer`, and you're good to go.
+
+## Usage with nodeJS
+
+Install via npm `npm install https://github.com/nekdolan/lunr-unicode-normalizer.git`
+After lunr is loaded do `require("lunr-unicode-normalizer")(lunr);`
