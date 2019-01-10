@@ -1,0 +1,22 @@
+{
+  "name": "lunr-unicode-normalizer",
+  "version": "1.0.0",
+  "description": "unicode normalizer for lunr",
+  "main": "lunr.unicodeNormalizer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nekdolan/lunr-unicode-normalizer.git"
+  },
+  "keywords": [
+    "lunr"
+  ],
+  "author": "cvan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nekdolan/lunr-unicode-normalizer/issues"
+  },
+  "homepage": "https://github.com/nekdolan/lunr-unicode-normalizer#readme"
+}
