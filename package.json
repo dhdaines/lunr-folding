@@ -14,7 +14,7 @@
     "lunr"
   ],
   "author": "cvan",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nekdolan/lunr-unicode-normalizer/issues"
   },
