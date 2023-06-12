@@ -1,22 +1,23 @@
 {
-  "name": "lunr-unicode-normalizer",
-  "version": "1.0.0",
-  "description": "unicode normalizer for lunr",
-  "main": "lunr.unicodeNormalizer.js",
+  "name": "lunr-folding",
+  "version": "0.0.1",
+  "description": "Simple character folding for lunr.js",
+  "main": "lib/lunr.unicodeNormalizer.js",
+  "types": "lib/lunr.unicodeNormalizer.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nekdolan/lunr-unicode-normalizer.git"
+    "url": "git+https://github.com/dhdaines/lunr-folding.git"
   },
   "keywords": [
     "lunr"
   ],
-  "author": "cvan",
+  "author": "David Huggins-Daines <dhd@ecolingui.ca>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nekdolan/lunr-unicode-normalizer/issues"
+    "url": "https://github.com/dhdaines/lunr-folding/issues"
   },
-  "homepage": "https://github.com/nekdolan/lunr-unicode-normalizer#readme"
+  "homepage": "https://github.com/dhdaines/lunr-folding/#readme"
 }

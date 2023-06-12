@@ -1,19 +1,27 @@
-# lunr-unicode-normalizer
+# lunr-folding
 
-An extension to [lunr.js](http://lunrjs.com/) to normalize unicode characters
-by removing all diacritical marks.
+An extension to [lunr.js](http://lunrjs.com/) to do basic character
+folding, converting various accented and non-ASCII characters to their
+(presumed) ASCII equivalents.
 
 For example, searching for "facade" will return results for "façade" and
 searching for for "façade" will return results for "facade."
 
-
 ## Usage
 
-Just drop in the `lunr.unicodeNormalizer.js` script after `lunr.js` has been
-loaded. `lunr.tokenizer` will then be monkeypatched to use
-`lunr.unicodeNormalizer`, and you're good to go.
+Install via npm `npm install lunr-folding`. After lunr is loaded do:
 
-## Usage with nodeJS
+```javascript
+require("lunr-folding")(lunr);
+```
 
-Install via npm `npm install https://github.com/nekdolan/lunr-unicode-normalizer.git`
-After lunr is loaded do `require("lunr-unicode-normalizer")(lunr);`
+Or in TypeScript:
+
+```typescript
+import folding from "lunr-folding";
+folding(lunr)
+```
+## Credits
+
+Based on the original lunr.unicodeNormalizer.js by Christopher Van and
+the NPM-ified version by Dániel Boros
