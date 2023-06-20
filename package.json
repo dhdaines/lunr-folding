@@ -1,6 +1,6 @@
 {
   "name": "lunr-folding",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple character folding for lunr.js",
   "main": "lib/lunr.unicodeNormalizer.js",
   "types": "lib/lunr.unicodeNormalizer.d.ts",

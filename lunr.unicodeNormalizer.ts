@@ -101,33 +101,44 @@ function unicodeFolder(str: string) {
   });
 }
 
-function tokenizer(obj: lunr.Token) {
-  if (!arguments.length || obj === null || obj === undefined) return [];
-  if (Array.isArray(obj)) {
-    return obj.map(function(t) {
-      return unicodeFolder(t).toLowerCase();
-    });
-  }
-
-  var str = obj.toString().replace(/^\s+/, '');
-
-  for (var i = str.length - 1; i >= 0; i--) {
-    if (/\S/.test(str.charAt(i))) {
-      str = str.substring(0, i + 1);
-      break;
-    }
-  }
-
-  str = unicodeFolder(str);
-
-  return str
-    .split(/\s+/)
-    .map(function(token: string) {
-      return token.toLowerCase();
-    });
-};
-
 export default function patchLunr(lunrmod: any) {
+  var tokenizer = function(obj: any, metadata: any) {
+    if (!arguments.length || obj === null || obj === undefined) return [];
+    if (Array.isArray(obj)) {
+      return obj.map(function(t) {
+        return new lunrmod.Token(
+          unicodeFolder(lunrmod.utils.asString(t)).toLowerCase(),
+          lunrmod.utils.clone(metadata))
+      });
+    }
+    var str = obj.toString(), len = str.length, tokens = []
+
+    for (var sliceEnd = 0, sliceStart = 0; sliceEnd <= len; sliceEnd++) {
+      var char = str.charAt(sliceEnd),
+      sliceLength = sliceEnd - sliceStart
+
+      if ((char.match(lunrmod.tokenizer.separator) || sliceEnd == len)) {
+
+        if (sliceLength > 0) {
+          var tokenMetadata = lunrmod.utils.clone(metadata) || {}
+          tokenMetadata["position"] = [sliceStart, sliceLength]
+          tokenMetadata["index"] = tokens.length
+
+          tokens.push(
+            new lunrmod.Token (
+              unicodeFolder(str.slice(sliceStart, sliceEnd)).toLowerCase(),
+              tokenMetadata
+            )
+          )
+        }
+
+        sliceStart = sliceEnd + 1
+      }
+    }
+
+    return tokens
+  }
+
   for (const attr in lunrmod.tokenizer){
     // @ts-ignore
     tokenizer[attr] = lunrmod.tokenizer[attr];
