@@ -1,0 +1,5 @@
+lib/*.spec.*
+*.spec.js
+lunr.unicodeNormalizer.js
+lunr.unicodeNormalizer.ts
+*.spec.ts

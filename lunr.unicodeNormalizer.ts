@@ -101,7 +101,7 @@ function unicodeFolder(str: string) {
   });
 }
 
-export default function patchLunr(lunrmod: any) {
+function patchLunr(lunrmod: any) {
   var tokenizer = function(obj: any, metadata: any) {
     if (!arguments.length || obj === null || obj === undefined) return [];
     if (Array.isArray(obj)) {
@@ -145,3 +145,7 @@ export default function patchLunr(lunrmod: any) {
   }
   lunrmod.tokenizer = tokenizer;
 }
+
+// Nasty and mysterious hack to make CommonJS and TS and ES imports work
+patchLunr.default = patchLunr;
+export = patchLunr;
