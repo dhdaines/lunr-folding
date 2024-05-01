@@ -3,3 +3,4 @@ lib/*.spec.*
 lunr.unicodeNormalizer.js
 lunr.unicodeNormalizer.ts
 *.spec.ts
+test-index.json

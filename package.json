@@ -1,11 +1,12 @@
 {
   "name": "lunr-folding",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Simple character folding for lunr.js",
   "main": "lib/lunr.unicodeNormalizer.js",
   "types": "lib/lunr.unicodeNormalizer.d.ts",
   "scripts": {
-    "test": "tsc --outDir . *.spec.ts && mocha lunr.unicodeNormalizer.spec && mocha lunr.noFolding.spec"
+    "build": "tsc",
+    "test": "tsc && mocha lib/lunr.unicodeNormalizer.spec && mocha lib/lunr.noFolding.spec"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,11 @@
   },
   "homepage": "https://github.com/dhdaines/lunr-folding/#readme",
   "devDependencies": {
-    "@types/lunr": "^2.3.6",
-    "@types/mocha": "^10.0.3",
-    "@types/node": "^20.8.7",
+    "@types/lunr": "^2.3.7",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.12.8",
     "lunr": "^2.3.9",
-    "mocha": "^10.2.0"
+    "mocha": "^10.4.0",
+    "typescript": "^5.4.5"
   }
 }

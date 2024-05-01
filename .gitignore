@@ -5,3 +5,4 @@ package-lock.json
 node_modules
 lib/
 *.js
+test-index.json
